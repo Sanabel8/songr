@@ -1,13 +1,27 @@
 package com.example.songr;
+import javax.persistence.*;
 
+@Entity
 public class Album {
-   private String title;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    public Long getId(){
+        return id;
+    }
+
+    private String title;
     private String artist;
     private int songCount;
     private int length;
     private String imageUrl;
 
+    public Album(){ }
+
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
+
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
@@ -25,6 +39,13 @@ public class Album {
 
     public String getArtist() {
         return artist;
+    }
+
+//    public Long getId() {
+//        return id;
+//    }
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setArtist(String artist) {
