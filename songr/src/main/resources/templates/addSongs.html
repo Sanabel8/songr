@@ -7,7 +7,6 @@
 </head>
 <header>
     <div class="navbar" th:fragment="header">
-
         <ul class="nav navbar-nav">
             <li>
                 <a class="navbar-brand" href="/">Home Page</a>
@@ -31,29 +30,26 @@
                 <a href="/addSong">Add Songs</a>
             </li>
         </ul>
-
-
     </div>
 </header>
 <body>
-<h1>Add your Album</h1>
-<form th:action="@{/sumAlbums}" method="post"> //th:object="${/}"
+<h1>Add your Song</h1>
+<form th:action="${/SumSongs}" method="post">
     <ul>
         <li>
             <input type="text" name="title" placeholder="Title" required="required"/>
-            <input type="text" name="artist" placeholder="Artist" required="required"/>
+            <input type="number" name="length" placeholder="Length" required="required"/>
         </li>
+    </ul>
+    <ul>
         <li>
-            <input type="number" name="songCount" placeholder="songCount" required="required"/>
-            <input type="number" name="length" placeholder="length" required="required"/>
-
+            <input type="number" name="trackNumber" placeholder="Track Number" required="required"/>
+            <input type="number" name="albumId" placeholder="Album" required="required"/>
         </li>
+    </ul>
+    <ul>
         <li>
-            <input type="text" name="imageUrl" placeholder="img-url" required="required"/>
-
-        </li>
-        <li>
-            <input type="submit" value="ADD ALBUM">
+            <input type="submit" value="ADD SONG">
         </li>
     </ul>
 </form>
